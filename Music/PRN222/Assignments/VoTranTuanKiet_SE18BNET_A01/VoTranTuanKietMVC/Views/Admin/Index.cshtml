@@ -1,0 +1,170 @@
+@model IEnumerable<FUNewsManagement.Models.SystemAccount>
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="fas fa-tachometer-alt text-primary"></i> Admin Dashboard</h2>
+            <div>
+                <a asp-action="ManageAccounts" class="btn btn-primary me-2">
+                    <i class="fas fa-users"></i> Manage Accounts
+                </a>
+                <a asp-action="StatisticsReport" class="btn btn-info">
+                    <i class="fas fa-chart-bar"></i> Statistics Report
+                </a>
+            </div>
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">
+                <i class="fas fa-user-shield"></i> Welcome, Administrator!
+            </h4>
+            <p>You have full access to manage the FU News Management System. Use the navigation above to manage user accounts and view system statistics.</p>
+            <hr>
+            <p class="mb-0">
+                <strong>Quick Actions:</strong>
+                <a asp-action="ManageAccounts" class="alert-link">Manage User Accounts</a> |
+                <a asp-action="StatisticsReport" class="alert-link">View Reports</a> |
+                <a asp-controller="News" asp-action="Index" class="alert-link">View Public News</a>
+            </p>
+        </div>
+
+        <!-- System Overview Cards -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">@Model.Count()</h4>
+                                <p class="card-text">Total Accounts</p>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="ManageAccounts" class="text-white text-decoration-none">
+                            <small>View Details <i class="fas fa-arrow-right"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">@Model.Count(a => a.AccountRole == 1)</h4>
+                                <p class="card-text">Staff Members</p>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-user-tie fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="ManageAccounts" class="text-white text-decoration-none">
+                            <small>Manage Staff <i class="fas fa-arrow-right"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">@Model.Count(a => a.AccountRole == 2)</h4>
+                                <p class="card-text">Lecturers</p>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="ManageAccounts" class="text-white text-decoration-none">
+                            <small>Manage Lecturers <i class="fas fa-arrow-right"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Accounts Table -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-users me-2"></i>Recent User Accounts
+                </h5>
+            </div>
+            <div class="card-body">
+                @if (Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var account in Model.Take(10))
+                                {
+                                    <tr>
+                                        <td>@account.AccountId</td>
+                                        <td>@account.AccountName</td>
+                                        <td>@account.AccountEmail</td>
+                                        <td>
+                                            @if (account.AccountRole == 1)
+                                            {
+                                                <span class="badge bg-success">Staff</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-info">Lecturer</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-action="ManageAccounts" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i> Manage
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @if (Model.Count() > 10)
+                    {
+                        <div class="text-center mt-3">
+                            <a asp-action="ManageAccounts" class="btn btn-primary">
+                                View All @Model.Count() Accounts <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-4">
+                        <i class="fas fa-users fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted">No user accounts found</h5>
+                        <p class="text-muted">Start by creating user accounts for staff and lecturers.</p>
+                        <a asp-action="ManageAccounts" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Create First Account
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

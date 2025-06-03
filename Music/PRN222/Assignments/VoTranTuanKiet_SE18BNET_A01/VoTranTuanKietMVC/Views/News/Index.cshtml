@@ -1,0 +1,137 @@
+@model IEnumerable<FUNewsManagement.Models.NewsArticle>
+@{
+    ViewData["Title"] = "News Articles";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="fas fa-newspaper text-primary"></i> Latest News</h2>
+            @if (ViewBag.IsLoggedIn == true && ViewBag.UserRole == "Staff")
+            {
+                <a asp-controller="Staff" asp-action="ManageNewsArticles" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Manage Articles
+                </a>
+            }
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="get" asp-action="Index" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="searchTerm" class="form-label">Search News</label>
+                        <input type="text" class="form-control" id="searchTerm" name="searchTerm" 
+                               value="@ViewBag.SearchTerm" placeholder="Search by title or content...">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="categoryId" class="form-label">Category</label>
+                        <select class="form-select" id="categoryId" name="categoryId">
+                            <option value="">All Categories</option>
+                            @if (ViewBag.Categories != null)
+                            {
+                                @foreach (var category in ViewBag.Categories as IEnumerable<FUNewsManagement.Models.Category>)
+                                {
+                                    <option value="@category.CategoryId" selected="@(ViewBag.SelectedCategoryId == category.CategoryId)">
+                                        @category.CategoryName
+                                    </option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- News Articles -->
+        @if (Model.Any())
+        {
+            <div class="row">
+                @foreach (var article in Model)
+                {
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-primary">@article.Category.CategoryName</span>
+                                    <small class="text-muted">@article.CreatedDate?.ToString("MMM dd, yyyy")</small>
+                                </div>
+                                <h5 class="card-title">
+                                    <a asp-action="Details" asp-route-id="@article.NewsArticleId" 
+                                       class="text-decoration-none text-dark">
+                                        @article.NewsTitle
+                                    </a>
+                                </h5>
+                                <p class="card-text text-muted">
+                                    @if (!string.IsNullOrEmpty(article.NewsContent))
+                                    {
+                                        @(article.NewsContent.Length > 150 ? article.NewsContent.Substring(0, 150) + "..." : article.NewsContent)
+                                    }
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="fas fa-user"></i> @article.CreatedBy.AccountName
+                                    </small>
+                                    <a asp-action="Details" asp-route-id="@article.NewsArticleId" 
+                                       class="btn btn-sm btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                                @if (article.Tags.Any())
+                                {
+                                    <div class="mt-2">
+                                        @foreach (var tag in article.Tags.Take(3))
+                                        {
+                                            <span class="badge bg-secondary me-1">#@tag.TagName</span>
+                                        }
+                                        @if (article.Tags.Count() > 3)
+                                        {
+                                            <span class="badge bg-light text-dark">+@(article.Tags.Count() - 3) more</span>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">No news articles found</h4>
+                <p class="text-muted">
+                    @if (!string.IsNullOrEmpty(ViewBag.SearchTerm as string))
+                    {
+                        <span>Try adjusting your search criteria.</span>
+                    }
+                    else
+                    {
+                        <span>Check back later for new articles.</span>
+                    }
+                </p>
+                @if (!string.IsNullOrEmpty(ViewBag.SearchTerm as string))
+                {
+                    <a asp-action="Index" class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i> View All Articles
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-submit form when category changes
+        document.getElementById('categoryId').addEventListener('change', function() {
+            this.form.submit();
+        });
+    </script>
+}

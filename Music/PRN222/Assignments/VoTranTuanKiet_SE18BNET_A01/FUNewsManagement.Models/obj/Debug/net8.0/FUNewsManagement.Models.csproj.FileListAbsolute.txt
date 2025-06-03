@@ -1,0 +1,12 @@
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\bin\Debug\net8.0\FUNewsManagement.Models.deps.json
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\bin\Debug\net8.0\FUNewsManagement.Models.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\bin\Debug\net8.0\FUNewsManagement.Models.pdb
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.AssemblyInfoInputs.cache
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.AssemblyInfo.cs
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.sourcelink.json
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\refint\FUNewsManagement.Models.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\FUNewsManagement.Models.pdb
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.Models\obj\Debug\net8.0\ref\FUNewsManagement.Models.dll

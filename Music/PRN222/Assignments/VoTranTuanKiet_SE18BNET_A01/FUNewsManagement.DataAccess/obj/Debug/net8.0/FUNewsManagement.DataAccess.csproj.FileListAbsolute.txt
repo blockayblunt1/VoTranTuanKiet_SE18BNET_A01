@@ -1,0 +1,16 @@
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\bin\Debug\net8.0\FUNewsManagement.DataAccess.deps.json
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\bin\Debug\net8.0\FUNewsManagement.DataAccess.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\bin\Debug\net8.0\FUNewsManagement.DataAccess.pdb
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\bin\Debug\net8.0\FUNewsManagement.Models.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\bin\Debug\net8.0\FUNewsManagement.Models.pdb
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.csproj.AssemblyReference.cache
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.AssemblyInfoInputs.cache
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.AssemblyInfo.cs
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.sourcelink.json
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsMa.5E67E0E7.Up2Date
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\refint\FUNewsManagement.DataAccess.dll
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\FUNewsManagement.DataAccess.pdb
+C:\Users\LAPTOP\Documents\augment-projects\VoTranTuanKiet_SE18BNET_A01\FUNewsManagement.DataAccess\obj\Debug\net8.0\ref\FUNewsManagement.DataAccess.dll
